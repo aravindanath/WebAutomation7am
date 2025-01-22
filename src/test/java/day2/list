@@ -5,8 +5,10 @@ local variable -- done
 global variable -- done
 String -- done
 if conditions -- done
-switch case
-for loops
-for each loops
-While
-do while
+switch case -- done
+for loops -- done
+for each loops -- done
+lanbda expression done
+While -- done
+do while -- done
+access modifier
