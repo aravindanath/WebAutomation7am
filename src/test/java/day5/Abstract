@@ -1,0 +1,79 @@
+In Java, the abstract keyword is used with classes and methods to define a blueprint for other classes. Here’s how it works:
+
+1. Abstract Class
+
+An abstract class is a class that cannot be instantiated (i.e., you cannot create objects of it directly). It is meant to be extended by other classes that provide implementations for its abstract methods.
+
+Use of Abstract Classes:
+	•	To provide a base class with common behavior that other classes can extend.
+	•	To enforce a contract where subclasses must implement certain methods.
+	•	To support partial implementation, where some methods may have a body and others may be abstract.
+
+Example of an Abstract Class:
+
+abstract class Animal {
+    // Abstract method (does not have a body)
+    abstract void makeSound();
+
+    // Concrete method (has a body)
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+// Subclass must implement the abstract method
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.makeSound();  // Output: Bark!
+        dog.sleep();      // Output: Sleeping...
+    }
+}
+
+2. Abstract Method
+
+An abstract method is a method that does not have a body and must be implemented by subclasses.
+
+Key Points:
+	•	Declared inside an abstract class.
+	•	Subclasses must override the abstract method.
+	•	Cannot be static, final, or private.
+
+Example:
+
+abstract class Vehicle {
+    abstract void start();  // Abstract method
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car is starting...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.start();  // Output: Car is starting...
+    }
+}
+
+When to Use Abstract Classes?
+	•	When you want to define common behavior and enforce a structure for subclasses.
+	•	When some methods should be implemented in the parent class and others should be mandatory for subclasses.
+	•	When you need constructors, instance variables, or methods with implementations (unlike interfaces, which cannot have instance variables).
+
+Difference Between Abstract Class and Interface
+
+Feature	Abstract Class	Interface
+Instantiation	Cannot be instantiated	Cannot be instantiated
+Methods	Can have both abstract and concrete methods	Can only have abstract methods (before Java 8)
+Variables	Can have instance variables	Can only have public static final variables (constants)
+Multiple Inheritance	Supports single inheritance	Supports multiple inheritance
+Constructor	Can have a constructor	Cannot have a constructor
