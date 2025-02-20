@@ -10,12 +10,16 @@ public class ReadPropfile {
 
 
     public static void main(String[] args) throws IOException {
-        String path = System.getProperty("user.dir")+ File.separator+"config.properties";
+//        String path = System.getProperty("user.dir")+ File.separator+"config.properties";
+//
+//        FileInputStream fis = new FileInputStream(path);
+//        Properties properties = new Properties();
+//        properties.load(fis);
+//       String value = properties.getProperty("url");
+//       System.out.println(value);
 
-        FileInputStream fis = new FileInputStream(path);
-        Properties properties = new Properties();
-        properties.load(fis);
-       String value = properties.getProperty("url");
+        Utitls.setValue("url", "https://www.google.com");
+       String value =  Utitls.getValue("url");
        System.out.println(value);
     }
 }
