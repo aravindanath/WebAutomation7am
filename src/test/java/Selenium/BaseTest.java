@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
-    protected WebDriver driver;
+    protected WebDriver driver;// global variable
     @BeforeClass
     public void setup(){
         driver   = new ChromeDriver();

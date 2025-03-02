@@ -1,9 +1,9 @@
-id
-class name
-name
-tagname
-partial link test
-link text
+id -- done
+class name -- done
+name -- done
+tagname -- done
+partial link test -- done
+link text -- done
 xpath
 
 //tagName[@attribute='value']
@@ -20,7 +20,7 @@ xpath
 css
 . class
 # id
-* contains
+* contains  tagname[attribute*='value']
 $ endswith
 ^ startswith
 
