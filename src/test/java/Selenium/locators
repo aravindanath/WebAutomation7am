@@ -26,11 +26,14 @@ $ endswith
 
 
 alerts -- done
-frames
-windows
-actions class
-mouse hover
-drag and drop
+frames -- done
+windows -- done
+actions class --
+mouse hover -- done
+drag and drop -- done
+file upload -- done
+File download -done
+
 Dropdown
 scroll
 wait
@@ -40,8 +43,7 @@ headless browser
 cross browser testing
 SSL certificates
 Cookies
-file upload
-File download
+
 Autosuggestion
 check box
 radio button
