@@ -2,6 +2,7 @@ package Selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -13,7 +14,10 @@ public class BaseTest {
     protected WebDriver driver;// global variable
     @BeforeClass
     public void setup(){
-        driver   = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless");
+        options.setAcceptInsecureCerts(true);
+        driver   = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 

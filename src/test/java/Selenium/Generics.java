@@ -1,10 +1,14 @@
 package Selenium;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
+import java.io.File;
+
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Generics {
 
@@ -49,4 +53,26 @@ public class Generics {
     public static void scrollToElement(WebDriver driver, WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
+    public static String dateTime() {
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formattedDate = myDateObj.format(myFormatObj);
+        return formattedDate.replace("-", "_").replace(" ", "_").replace(":", "_");
+    }
+
+    public static void takeScreenshot(WebDriver driver)  {
+
+        try {
+            TakesScreenshot srcShot = (TakesScreenshot) driver;
+            File srcFile = srcShot.getScreenshotAs(OutputType.FILE);
+            File destFile = new File("./target/screenshot"+dateTime()+".png");
+            Files.copy(srcFile.toPath(), destFile.toPath());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
 }
